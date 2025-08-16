@@ -32,45 +32,53 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md dark:bg-gray-900/80">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        <div className="flex lg:flex-1">
+        {/* Logo */}
+        <div className="flex-shrink-0">
           <a
             href="#"
-            className="-m-1.5 p-1.5"
+            className="flex items-center space-x-2"
             aria-label="Главная страница Pavel.Dev"
           >
+            <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">P</span>
+            </div>
             <span className="text-2xl font-bold text-primary-600 dark:text-primary-400">
               Pavel.Dev
             </span>
           </a>
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-12">
+        {/* Navigation Links - Center */}
+        <div className="hidden lg:flex items-center space-x-8">
           {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400"
+              className="relative text-sm font-semibold leading-6 text-gray-900 hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400 transition-colors duration-200 group"
             >
               {item.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full"></span>
             </a>
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        {/* Action Buttons - Right */}
+        <div className="flex items-center space-x-4">
           {/* Language toggle */}
           <button
             onClick={toggleLanguage}
-            className="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+            className="relative rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 group"
             aria-label={`Переключить на ${language === 'ru' ? 'английский' : 'русский'} язык`}
             type="button"
           >
-            {language === 'ru' ? 'EN' : 'RU'}
+            <span className="relative z-10">{language === 'ru' ? 'EN' : 'RU'}</span>
+            <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 dark:from-primary-900/20 dark:to-blue-900/20"></span>
           </button>
 
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+            className="relative rounded-lg p-2.5 text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 group"
             aria-label={
               theme === 'dark'
                 ? 'Переключить на светлую тему'
@@ -93,9 +101,10 @@ export default function Header() {
             )}
           </button>
 
+          {/* Mobile menu button */}
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 lg:hidden"
+            className="lg:hidden relative rounded-lg p-2.5 text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 group"
             onClick={toggleMobileMenu}
             aria-label="Открыть мобильное меню"
             aria-expanded={mobileMenuOpen}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useLanguage } from '@/lib/language-context'
 
 const navigation = {
   main: [
@@ -36,6 +37,7 @@ const navigation = {
 }
 
 export default function Footer() {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -71,12 +73,12 @@ export default function Footer() {
     <footer className="bg-white dark:bg-gray-900" role="contentinfo">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         {/* Contact Form Section */}
-        <div className="mx-auto max-w-2xl text-center mb-16">
+        <div id="contact" className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            Свяжитесь со мной
+            {t('contactTitle')}
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
-            Оставьте свои данные, и я свяжусь с вами для обсуждения проекта
+            {t('contactDescription')}
           </p>
         </div>
 
@@ -86,15 +88,15 @@ export default function Footer() {
               <svg className="mx-auto h-12 w-12 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              <h3 className="mt-4 text-lg font-medium text-green-800 dark:text-green-200">Сообщение отправлено!</h3>
-              <p className="mt-2 text-green-700 dark:text-green-300">Я свяжусь с вами в ближайшее время.</p>
+              <h3 className="mt-4 text-lg font-medium text-green-800 dark:text-green-200">{t('messageSent')}</h3>
+              <p className="mt-2 text-green-700 dark:text-green-300">{t('messageSentDescription')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Имя *
+                    {t('name')} *
                   </label>
                   <input
                     type="text"
@@ -104,12 +106,12 @@ export default function Footer() {
                     value={formData.name}
                     onChange={handleChange}
                     className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
-                    placeholder="Ваше имя"
+                    placeholder={t('namePlaceholder')}
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Email *
+                    {t('email')} *
                   </label>
                   <input
                     type="email"
@@ -119,13 +121,13 @@ export default function Footer() {
                     value={formData.email}
                     onChange={handleChange}
                     className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
-                    placeholder="your@email.com"
+                    placeholder={t('emailPlaceholder')}
                   />
                 </div>
               </div>
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Телефон
+                  {t('phone')}
                 </label>
                 <input
                   type="tel"
@@ -134,12 +136,12 @@ export default function Footer() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
-                  placeholder="+7 (999) 123-45-67"
+                                      placeholder={t('phonePlaceholder')}
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Сообщение *
+                  {t('message')} *
                 </label>
                 <textarea
                   name="message"
@@ -149,7 +151,7 @@ export default function Footer() {
                   value={formData.message}
                   onChange={handleChange}
                   className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
-                  placeholder="Опишите ваш проект или задайте вопрос..."
+                                      placeholder={t('messagePlaceholder')}
                 />
               </div>
               <div className="text-center">
@@ -158,7 +160,7 @@ export default function Footer() {
                   disabled={isSubmitting}
                   className="rounded-md bg-primary-600 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Отправка...' : 'Отправить сообщение'}
+                  {isSubmitting ? t('sending') : t('sendMessage')}
                 </button>
               </div>
             </form>
@@ -197,10 +199,10 @@ export default function Footer() {
 
           <div className="mt-10 text-center">
             <p className="text-sm leading-5 text-gray-600 dark:text-gray-400">
-              &copy; 2024 Pavel.Dev. Все права защищены.
+              &copy; 2024 Pavel.Dev. {t('copyright')}
             </p>
             <p className="mt-2 text-sm leading-5 text-gray-600 dark:text-gray-400">
-              Создано с ❤️ на Next.js
+              {t('madeWith')}
             </p>
           </div>
         </div>

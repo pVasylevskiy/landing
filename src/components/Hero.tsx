@@ -28,7 +28,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-col items-center justify-center gap-4 xs:flex-row xs:gap-x-6">
             <a
               href="#contact"
-              className="rounded-md bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+              className="rounded-md bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-all duration-200 hover:scale-105"
               aria-label="Перейти к форме заказа проекта"
             >
               {t('startProject')}

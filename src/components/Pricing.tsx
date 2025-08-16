@@ -1,3 +1,7 @@
+'use client'
+
+import { useLanguage } from '@/lib/language-context'
+
 const tiers = [
   {
     name: 'Landing Page',
@@ -50,6 +54,8 @@ const tiers = [
 ]
 
 export default function Pricing() {
+  const { t } = useLanguage()
+  
   return (
     <section
       id="pricing"
@@ -62,15 +68,14 @@ export default function Pricing() {
             id="pricing-heading"
             className="text-base font-semibold leading-7 text-primary-600 dark:text-primary-400"
           >
-            Цены
+            {t('pricing')}
           </h2>
           <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-            Выберите подходящий тариф
+            {t('pricingTitle')}
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">
-          Прозрачное ценообразование без скрытых комиссий. Каждый проект
-          индивидуален.
+          {t('pricingDescription')}
         </p>
         <div className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 gap-x-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {tiers.map((tier) => (
@@ -89,7 +94,7 @@ export default function Pricing() {
                   </h3>
                   {tier.featured && (
                     <p className="rounded-full bg-primary-600/10 px-2.5 py-0.5 text-xs font-semibold leading-5 text-primary-600 dark:bg-primary-400/10 dark:text-primary-400">
-                      Популярный
+                      {t('popular')}
                     </p>
                   )}
                 </div>
@@ -125,14 +130,14 @@ export default function Pricing() {
                 </ul>
               </div>
               <a
-                href={tier.href}
+                href="#contact"
                 className={`mt-8 block rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
                   tier.featured
                     ? 'bg-primary-600 text-white shadow-sm hover:bg-primary-500 focus-visible:outline-primary-600'
                     : 'bg-primary-600/10 text-primary-600 hover:bg-primary-600/20 dark:bg-primary-400/10 dark:text-primary-400 dark:hover:bg-primary-400/20'
                 }`}
               >
-                Начать проект
+                {t('startProjectPricing')}
               </a>
             </div>
           ))}
