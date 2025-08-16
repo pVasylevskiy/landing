@@ -3,18 +3,19 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from './theme-provider'
-
-const navigation = [
-  { name: 'Главная', href: '#home' },
-  { name: 'Возможности', href: '#features' },
-  { name: 'Цены', href: '#pricing' },
-  { name: 'FAQ', href: '#faq' },
-]
+import { useLanguage } from '@/lib/language-context'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [language, setLanguage] = useState<'ru' | 'en'>('ru')
   const { theme, setTheme } = useTheme()
+  const { language, setLanguage, t } = useLanguage()
+
+  const navigation = [
+    { name: t('home'), href: '#home' },
+    { name: t('features'), href: '#features' },
+    { name: t('pricing'), href: '#pricing' },
+    { name: t('faq'), href: '#faq' },
+  ]
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')

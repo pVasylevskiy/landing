@@ -1,4 +1,10 @@
+'use client'
+
+import { useLanguage } from '@/lib/language-context'
+
 export default function Hero() {
+  const { t } = useLanguage()
+  
   return (
     <section
       id="home"
@@ -11,14 +17,13 @@ export default function Hero() {
             id="hero-heading"
             className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white xs:text-4xl sm:text-6xl"
           >
-            Создаю современные{' '}
+            {t('heroTitle')}{' '}
             <span className="text-primary-600 dark:text-primary-400">
-              веб-приложения
+              {t('heroTitleHighlight')}
             </span>
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-            Разрабатываю быстрые, масштабируемые и удобные веб-приложения с
-            использованием Next.js, React и TypeScript. От идеи до запуска.
+            {t('heroDescription')}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 xs:flex-row xs:gap-x-6">
             <a
@@ -26,13 +31,13 @@ export default function Hero() {
               className="rounded-md bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
               aria-label="Перейти к форме заказа проекта"
             >
-              Начать проект
+              {t('startProject')}
             </a>
             <a
               href="#features"
               className="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
             >
-              Узнать больше <span aria-hidden="true">→</span>
+              {t('learnMore')} <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
