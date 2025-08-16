@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from 'react'
+
 const navigation = {
   main: [
     { name: 'Главная', href: '#home' },
@@ -32,54 +36,171 @@ const navigation = {
 }
 
 export default function Footer() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    // Имитация отправки формы
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    
+    setIsSubmitting(false)
+    setIsSubmitted(true)
+    setFormData({ name: '', email: '', phone: '', message: '' })
+    
+    // Сброс статуса через 5 секунд
+    setTimeout(() => setIsSubmitted(false), 5000)
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }))
+  }
+
   return (
     <footer className="bg-white dark:bg-gray-900" role="contentinfo">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-        <nav
-          className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
-          aria-label="Footer"
-        >
-          {navigation.main.map((item) => (
-            <div key={item.name} className="pb-6">
-              <a
-                href={item.href}
-                className="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-              >
-                {item.name}
-              </a>
-            </div>
-          ))}
-        </nav>
-
-        <div className="mt-10 flex justify-center space-x-10">
-          {navigation.social.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
-            >
-              <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
-            </a>
-          ))}
+        {/* Contact Form Section */}
+        <div className="mx-auto max-w-2xl text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+            Свяжитесь со мной
+          </h2>
+          <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
+            Оставьте свои данные, и я свяжусь с вами для обсуждения проекта
+          </p>
         </div>
 
-        <div className="mt-10 border-t border-gray-900/10 dark:border-gray-100/10 pt-10">
-          <div className="text-center">
+        <div className="mx-auto max-w-2xl">
+          {isSubmitted ? (
+            <div className="text-center p-8 bg-green-50 dark:bg-green-900/20 rounded-2xl border border-green-200 dark:border-green-800">
+              <svg className="mx-auto h-12 w-12 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <h3 className="mt-4 text-lg font-medium text-green-800 dark:text-green-200">Сообщение отправлено!</h3>
+              <p className="mt-2 text-green-700 dark:text-green-300">Я свяжусь с вами в ближайшее время.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Имя *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                    placeholder="Ваше имя"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                    placeholder="your@email.com"
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Телефон
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                  placeholder="+7 (999) 123-45-67"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Сообщение *
+                </label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows={4}
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                  placeholder="Опишите ваш проект или задайте вопрос..."
+                />
+              </div>
+              <div className="text-center">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="rounded-md bg-primary-600 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Отправка...' : 'Отправить сообщение'}
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
+
+        <div className="mt-16 border-t border-gray-900/10 dark:border-gray-100/10 pt-10">
+          <nav
+            className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
+            aria-label="Footer"
+          >
+            {navigation.main.map((item) => (
+              <div key={item.name} className="pb-6">
+                <a
+                  href={item.href}
+                  className="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                >
+                  {item.name}
+                </a>
+              </div>
+            ))}
+          </nav>
+
+          <div className="mt-10 flex justify-center space-x-10">
+            {navigation.social.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+              >
+                <span className="sr-only">{item.name}</span>
+                <item.icon className="h-6 w-6" aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
             <p className="text-sm leading-5 text-gray-600 dark:text-gray-400">
               &copy; 2024 Pavel.Dev. Все права защищены.
             </p>
             <p className="mt-2 text-sm leading-5 text-gray-600 dark:text-gray-400">
               Создано с ❤️ на Next.js
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-8 text-center">
-          <div className="text-sm text-gray-600 dark:text-gray-400">
-            <p>Свяжитесь со мной для обсуждения вашего проекта:</p>
-            <p className="mt-2 font-medium text-primary-600 dark:text-primary-400">
-              hello@pavel.dev
             </p>
           </div>
         </div>

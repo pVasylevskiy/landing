@@ -72,14 +72,14 @@ export default function Pricing() {
           Прозрачное ценообразование без скрытых комиссий. Каждый проект
           индивидуален.
         </p>
-        <div className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 gap-x-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {tiers.map((tier) => (
             <div
               key={tier.id}
-              className={`flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700 xl:p-10 ${
+              className={`flex flex-col justify-between rounded-3xl bg-white p-8 border border-gray-200 dark:bg-gray-800 dark:border-gray-700 xl:p-10 ${
                 tier.featured
-                  ? 'ring-2 ring-primary-600 dark:ring-primary-400'
-                  : ''
+                  ? 'border-2 border-primary-600 dark:border-primary-400 shadow-lg'
+                  : 'shadow-md'
               }`}
             >
               <div>

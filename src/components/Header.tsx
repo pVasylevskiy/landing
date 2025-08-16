@@ -13,10 +13,15 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [language, setLanguage] = useState<'ru' | 'en'>('ru')
   const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'ru' ? 'en' : 'ru')
   }
 
   const toggleMobileMenu = () => {
@@ -50,7 +55,18 @@ export default function Header() {
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          {/* Language toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+            aria-label={`Переключить на ${language === 'ru' ? 'английский' : 'русский'} язык`}
+            type="button"
+          >
+            {language === 'ru' ? 'EN' : 'RU'}
+          </button>
+
+          {/* Theme toggle */}
           <button
             onClick={toggleTheme}
             className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
