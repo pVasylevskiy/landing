@@ -24,11 +24,41 @@ export const translations = {
     seoReady: 'SEO Ready',
     seoDescription: 'Готовность к поисковой оптимизации с серверным рендерингом, мета-тегами и структурированными данными.',
     
-    // Pricing
-    pricingTitle: 'Выберите подходящий тариф',
-    pricingDescription: 'Прозрачное ценообразование без скрытых комиссий. Каждый проект индивидуален.',
-    popular: 'Популярный',
-    startProjectPricing: 'Начать проект',
+      // Pricing
+  pricingTitle: 'Выберите подходящий тариф',
+  pricingDescription: 'Прозрачное ценообразование без скрытых комиссий. Каждый проект индивидуален.',
+  popular: 'Популярный',
+  startProjectPricing: 'Начать проект',
+  
+  // Pricing Tiers
+  tierLanding: 'Landing Page',
+  tierCorporate: 'Корпоративный сайт',
+  tierApp: 'Веб-приложение',
+  
+  // Pricing Descriptions
+  tierLandingDesc: 'Одностраничный сайт для презентации продукта или услуги',
+  tierCorporateDesc: 'Многостраничный сайт для компании с админ-панелью',
+  tierAppDesc: 'Сложное веб-приложение с пользовательскими функциями',
+  
+  // Pricing Features
+  adaptiveDesign: 'Адаптивный дизайн',
+  seoOptimization: 'SEO оптимизация',
+  contactForm: 'Форма обратной связи',
+  googleAnalytics: 'Аналитика Google',
+  hosting1Year: 'Хостинг на 1 год',
+  support1Month: 'Поддержка 1 месяц',
+  upTo10Pages: 'До 10 страниц',
+  cmsSystem: 'CMS система',
+  blogNews: 'Блог/новости',
+  multilingual: 'Многоязычность',
+  crmIntegration: 'Интеграция с CRM',
+  support3Months: 'Поддержка 3 месяца',
+  userAuth: 'Авторизация пользователей',
+  database: 'База данных',
+  apiIntegration: 'API интеграции',
+  mobileVersion: 'Мобильная версия',
+  techSupport: 'Техническая поддержка',
+  updates6Months: 'Обновления 6 месяцев',
     
       // FAQ
   faqTitle: 'Часто задаваемые вопросы',
@@ -97,11 +127,41 @@ export const translations = {
     seoReady: 'SEO Ready',
     seoDescription: 'Search engine optimization readiness with server-side rendering, meta tags and structured data.',
     
-    // Pricing
-    pricingTitle: 'Choose the right plan',
-    pricingDescription: 'Transparent pricing without hidden fees. Each project is individual.',
-    popular: 'Popular',
-    startProjectPricing: 'Start Project',
+      // Pricing
+  pricingTitle: 'Choose the right plan',
+  pricingDescription: 'Transparent pricing without hidden fees. Each project is individual.',
+  popular: 'Popular',
+  startProjectPricing: 'Start Project',
+  
+  // Pricing Tiers
+  tierLanding: 'Landing Page',
+  tierCorporate: 'Corporate Website',
+  tierApp: 'Web Application',
+  
+  // Pricing Descriptions
+  tierLandingDesc: 'Single-page website for product or service presentation',
+  tierCorporateDesc: 'Multi-page website for company with admin panel',
+  tierAppDesc: 'Complex web application with user functions',
+  
+  // Pricing Features
+  adaptiveDesign: 'Adaptive design',
+  seoOptimization: 'SEO optimization',
+  contactForm: 'Contact form',
+  googleAnalytics: 'Google Analytics',
+  hosting1Year: 'Hosting for 1 year',
+  support1Month: 'Support 1 month',
+  upTo10Pages: 'Up to 10 pages',
+  cmsSystem: 'CMS system',
+  blogNews: 'Blog/news',
+  multilingual: 'Multilingual',
+  crmIntegration: 'CRM integration',
+  support3Months: 'Support 3 months',
+  userAuth: 'User authentication',
+  database: 'Database',
+  apiIntegration: 'API integration',
+  mobileVersion: 'Mobile version',
+  techSupport: 'Technical support',
+  updates6Months: 'Updates 6 months',
     
       // FAQ
   faqTitle: 'Frequently Asked Questions',

@@ -2,59 +2,59 @@
 
 import { useLanguage } from '@/lib/language-context'
 
-const tiers = [
-  {
-    name: 'Landing Page',
-    id: 'tier-landing',
-    href: '#',
-    price: { monthly: 'от 50,000₽' },
-    description: 'Одностраничный сайт для презентации продукта или услуги',
-    features: [
-      'Адаптивный дизайн',
-      'SEO оптимизация',
-      'Форма обратной связи',
-      'Аналитика Google',
-      'Хостинг на 1 год',
-      'Поддержка 1 месяц',
-    ],
-    featured: false,
-  },
-  {
-    name: 'Корпоративный сайт',
-    id: 'tier-corporate',
-    href: '#',
-    price: { monthly: 'от 150,000₽' },
-    description: 'Многостраничный сайт для компании с админ-панелью',
-    features: [
-      'До 10 страниц',
-      'CMS система',
-      'Блог/новости',
-      'Многоязычность',
-      'Интеграция с CRM',
-      'Поддержка 3 месяца',
-    ],
-    featured: true,
-  },
-  {
-    name: 'Веб-приложение',
-    id: 'tier-app',
-    href: '#',
-    price: { monthly: 'от 300,000₽' },
-    description: 'Сложное веб-приложение с пользовательскими функциями',
-    features: [
-      'Авторизация пользователей',
-      'База данных',
-      'API интеграции',
-      'Мобильная версия',
-      'Техническая поддержка',
-      'Обновления 6 месяцев',
-    ],
-    featured: false,
-  },
-]
-
 export default function Pricing() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  
+  const tiers = [
+    {
+      name: t('tierLanding'),
+      id: 'tier-landing',
+      href: '#',
+      price: { monthly: language === 'ru' ? 'от 50,000₽' : 'from $500' },
+      description: t('tierLandingDesc'),
+      features: [
+        t('adaptiveDesign'),
+        t('seoOptimization'),
+        t('contactForm'),
+        t('googleAnalytics'),
+        t('hosting1Year'),
+        t('support1Month'),
+      ],
+      featured: false,
+    },
+    {
+      name: t('tierCorporate'),
+      id: 'tier-corporate',
+      href: '#',
+      price: { monthly: language === 'ru' ? 'от 150,000₽' : 'from $1,500' },
+      description: t('tierCorporateDesc'),
+      features: [
+        t('upTo10Pages'),
+        t('cmsSystem'),
+        t('blogNews'),
+        t('multilingual'),
+        t('crmIntegration'),
+        t('support3Months'),
+      ],
+      featured: true,
+    },
+    {
+      name: t('tierApp'),
+      id: 'tier-app',
+      href: '#',
+      price: { monthly: language === 'ru' ? 'от 300,000₽' : 'from $3,000' },
+      description: t('tierAppDesc'),
+      features: [
+        t('userAuth'),
+        t('database'),
+        t('apiIntegration'),
+        t('mobileVersion'),
+        t('techSupport'),
+        t('updates6Months'),
+      ],
+      featured: false,
+    },
+  ]
   
   return (
     <section
