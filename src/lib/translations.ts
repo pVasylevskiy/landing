@@ -55,7 +55,7 @@ export const translations = {
   startProjectPricing: 'Начать проект',
   
   // Pricing Tiers
-  tierLanding: 'Landing Page',
+  tierLanding: 'Лендинг',
   tierCorporate: 'Корпоративный сайт',
   tierApp: 'Веб-приложение',
   

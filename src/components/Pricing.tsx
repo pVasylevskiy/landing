@@ -3,14 +3,14 @@
 import { useLanguage } from '@/lib/language-context'
 
 export default function Pricing() {
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
   
   const tiers = [
     {
       name: t('tierLanding'),
       id: 'tier-landing',
       href: '#',
-      price: { monthly: language === 'ru' ? 'от 50,000₽' : 'from $500' },
+      price: { monthly: 'from $500' },
       description: t('tierLandingDesc'),
       features: [
         t('adaptiveDesign'),
@@ -26,7 +26,7 @@ export default function Pricing() {
       name: t('tierCorporate'),
       id: 'tier-corporate',
       href: '#',
-      price: { monthly: language === 'ru' ? 'от 150,000₽' : 'from $1,500' },
+      price: { monthly: 'from $1,500' },
       description: t('tierCorporateDesc'),
       features: [
         t('upTo10Pages'),
@@ -42,7 +42,7 @@ export default function Pricing() {
       name: t('tierApp'),
       id: 'tier-app',
       href: '#',
-      price: { monthly: language === 'ru' ? 'от 300,000₽' : 'from $3,000' },
+      price: { monthly: 'from $3,000' },
       description: t('tierAppDesc'),
       features: [
         t('userAuth'),
