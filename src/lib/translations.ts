@@ -6,6 +6,19 @@ export const translations = {
     pricing: 'Цены',
     faq: 'FAQ',
     
+    // Header additional
+    mainPage: 'Главная страница Pavel.Dev',
+    switchToEnglish: 'Переключить на английский язык',
+    switchToRussian: 'Переключить на русский язык',
+    switchToLightTheme: 'Переключить на светлую тему',
+    switchToDarkTheme: 'Переключить на тёмную тему',
+    
+    // Mobile menu
+    mobileMenu: 'Мобильное меню',
+    emailContact: 'Написать на email',
+    openMobileMenu: 'Открыть мобильное меню',
+    closeMobileMenu: 'Закрыть мобильное меню',
+    
     // Hero
     heroTitle: 'Создаю современные',
     heroTitleHighlight: 'веб-приложения',
@@ -17,6 +30,17 @@ export const translations = {
     technologies: 'Технологии',
     featuresTitle: 'Всё что нужно для современного веба',
     featuresDescription: 'Использую проверенные технологии и лучшие практики для создания быстрых, надёжных и масштабируемых веб-приложений.',
+    
+    // Technology names
+    nextjs: 'Next.js 14',
+    typescript: 'TypeScript',
+    tailwind: 'Tailwind CSS',
+    
+    // Technology descriptions
+    nextjsDescription: 'Современный React фреймворк с App Router, серверными компонентами и оптимизацией производительности.',
+    typescriptDescription: 'Типизированный JavaScript для создания надёжного и масштабируемого кода с лучшим DX.',
+    tailwindDescription: 'Utility-first CSS фреймворк для быстрого создания современных и отзывчивых интерфейсов.',
+    
     responsiveDesign: 'Responsive Design',
     responsiveDescription: 'Адаптивный дизайн для всех устройств с мобильным first подходом и поддержкой до 1440px.',
     performance: 'Performance',
@@ -87,6 +111,16 @@ export const translations = {
     message: 'Сообщение',
     sendMessage: 'Отправить сообщение',
     sending: 'Отправка...',
+    
+    // Footer navigation
+    footerHome: 'Главная',
+    footerFeatures: 'Возможности',
+    footerPricing: 'Цены',
+    footerFaq: 'FAQ',
+    
+    // Footer social
+    github: 'GitHub',
+    telegram: 'Telegram',
     messageSent: 'Сообщение отправлено!',
     messageSentDescription: 'Я свяжусь с вами в ближайшее время.',
     writeEmail: 'Написать письмо',
@@ -109,6 +143,19 @@ export const translations = {
     pricing: 'Pricing',
     faq: 'FAQ',
     
+    // Header additional
+    mainPage: 'Main page Pavel.Dev',
+    switchToEnglish: 'Switch to English',
+    switchToRussian: 'Switch to Russian',
+    switchToLightTheme: 'Switch to light theme',
+    switchToDarkTheme: 'Switch to dark theme',
+    
+    // Mobile menu
+    mobileMenu: 'Mobile menu',
+    emailContact: 'Write to email',
+    openMobileMenu: 'Open mobile menu',
+    closeMobileMenu: 'Close mobile menu',
+    
     // Hero
     heroTitle: 'I create modern',
     heroTitleHighlight: 'web applications',
@@ -120,6 +167,17 @@ export const translations = {
     technologies: 'Technologies',
     featuresTitle: 'Everything you need for modern web',
     featuresDescription: 'I use proven technologies and best practices to create fast, reliable and scalable web applications.',
+    
+    // Technology names
+    nextjs: 'Next.js 14',
+    typescript: 'TypeScript',
+    tailwind: 'Tailwind CSS',
+    
+    // Technology descriptions
+    nextjsDescription: 'Modern React framework with App Router, server components and performance optimization.',
+    typescriptDescription: 'Typed JavaScript for creating reliable and scalable code with better DX.',
+    tailwindDescription: 'Utility-first CSS framework for quickly creating modern and responsive interfaces.',
+    
     responsiveDesign: 'Responsive Design',
     responsiveDescription: 'Adaptive design for all devices with mobile-first approach and support up to 1440px.',
     performance: 'Performance',
@@ -190,6 +248,16 @@ export const translations = {
     message: 'Message',
     sendMessage: 'Send Message',
     sending: 'Sending...',
+    
+    // Footer navigation
+    footerHome: 'Home',
+    footerFeatures: 'Features',
+    footerPricing: 'Pricing',
+    footerFaq: 'FAQ',
+    
+    // Footer social
+    github: 'GitHub',
+    telegram: 'Telegram',
     messageSent: 'Message sent!',
     messageSentDescription: 'I will contact you soon.',
     writeEmail: 'Write Email',

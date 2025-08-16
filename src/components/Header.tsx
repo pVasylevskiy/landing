@@ -37,7 +37,7 @@ export default function Header() {
           <a
             href="#"
             className="flex items-center space-x-2"
-            aria-label="Главная страница Pavel.Dev"
+            aria-label={t('mainPage')}
           >
             <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">P</span>
@@ -68,7 +68,7 @@ export default function Header() {
           <button
             onClick={toggleLanguage}
             className="relative rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 group"
-            aria-label={`Переключить на ${language === 'ru' ? 'английский' : 'русский'} язык`}
+            aria-label={language === 'ru' ? t('switchToEnglish') : t('switchToRussian')}
             type="button"
           >
             <span className="relative z-10">{language === 'ru' ? 'EN' : 'RU'}</span>
@@ -81,8 +81,8 @@ export default function Header() {
             className="relative rounded-lg p-2.5 text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 group"
             aria-label={
               theme === 'dark'
-                ? 'Переключить на светлую тему'
-                : 'Переключить на тёмную тему'
+                ? t('switchToLightTheme')
+                : t('switchToDarkTheme')
             }
             type="button"
           >
@@ -106,7 +106,7 @@ export default function Header() {
             type="button"
             className="lg:hidden relative rounded-lg p-2.5 text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 group"
             onClick={toggleMobileMenu}
-            aria-label="Открыть мобильное меню"
+            aria-label={t('openMobileMenu')}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
           >
@@ -150,7 +150,7 @@ export default function Header() {
               className="fixed top-0 left-0 right-0 z-50 w-full bg-white dark:bg-gray-900 shadow-xl border-b border-gray-200 dark:border-gray-700"
               role="dialog"
               aria-modal="true"
-              aria-label="Мобильное меню"
+                                  aria-label={t('mobileMenu')}
             >
               <div className="px-6 py-4">
                 <div className="flex items-center justify-between mb-6">
@@ -163,9 +163,9 @@ export default function Header() {
                     type="button"
                     className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                     onClick={toggleMobileMenu}
-                    aria-label="Закрыть мобильное меню"
+                    aria-label={t('closeMobileMenu')}
                   >
-                    <span className="sr-only">Закрыть меню</span>
+                    <span className="sr-only">{t('closeMobileMenu')}</span>
                     <svg
                       className="h-6 w-6"
                       fill="none"
@@ -199,7 +199,7 @@ export default function Header() {
                 {/* Additional Info */}
                 <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                    Свяжитесь со мной для обсуждения вашего проекта
+                    {t('contactDescriptionFooter')}
                   </p>
                   <a
                     href="mailto:hello@pavel.dev"
@@ -208,7 +208,7 @@ export default function Header() {
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    Написать письмо
+                    {t('writeEmail')}
                   </a>
                 </div>
               </div>
