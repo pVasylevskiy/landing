@@ -30,9 +30,23 @@ export const translations = {
     popular: 'Популярный',
     startProjectPricing: 'Начать проект',
     
-    // FAQ
-    faqTitle: 'Часто задаваемые вопросы',
-    faqDescription: 'Ответы на популярные вопросы о разработке и сотрудничестве.',
+      // FAQ
+  faqTitle: 'Часто задаваемые вопросы',
+  faqDescription: 'Ответы на популярные вопросы о разработке и сотрудничестве.',
+  
+  // FAQ Questions & Answers
+  faqDevTime: 'Сколько времени занимает разработка?',
+  faqDevTimeAnswer: 'Время разработки зависит от сложности проекта. Простой лендинг - 2-3 недели, корпоративный сайт - 1-2 месяца, веб-приложение - 2-6 месяцев.',
+  faqExistingProjects: 'Работаете ли вы с существующими проектами?',
+  faqExistingProjectsAnswer: 'Да, я могу доработать, переписать или модернизировать существующие проекты. Сначала проведу аудит и предложу оптимальное решение.',
+  faqSupport: 'Предоставляете ли вы техническую поддержку?',
+  faqSupportAnswer: 'Да, каждый проект включает период технической поддержки. Также могу заключить договор на долгосрочное обслуживание.',
+  faqTechnologies: 'Какие технологии используете?',
+  faqTechnologiesAnswer: 'Основной стек: Next.js 14, React 18, TypeScript, Tailwind CSS. Также работаю с Node.js, PostgreSQL, MongoDB и другими технологиями по необходимости.',
+  faqMobile: 'Делаете ли вы мобильные приложения?',
+  faqMobileAnswer: 'Да, разрабатываю мобильные приложения с использованием React Native или веб-версии с PWA функциональностью.',
+  faqProcess: 'Как происходит процесс разработки?',
+  faqProcessAnswer: '1. Обсуждение требований и планирование\n2. Создание дизайна и прототипа\n3. Разработка и тестирование\n4. Запуск и настройка\n5. Поддержка и обновления',
     
     // Footer
     contactTitle: 'Свяжитесь со мной',
@@ -89,9 +103,23 @@ export const translations = {
     popular: 'Popular',
     startProjectPricing: 'Start Project',
     
-    // FAQ
-    faqTitle: 'Frequently Asked Questions',
-    faqDescription: 'Answers to popular questions about development and collaboration.',
+      // FAQ
+  faqTitle: 'Frequently Asked Questions',
+  faqDescription: 'Answers to popular questions about development and collaboration.',
+  
+  // FAQ Questions & Answers
+  faqDevTime: 'How long does development take?',
+  faqDevTimeAnswer: 'Development time depends on project complexity. Simple landing page - 2-3 weeks, corporate website - 1-2 months, web application - 2-6 months.',
+  faqExistingProjects: 'Do you work with existing projects?',
+  faqExistingProjectsAnswer: 'Yes, I can improve, rewrite or modernize existing projects. First I will conduct an audit and suggest an optimal solution.',
+  faqSupport: 'Do you provide technical support?',
+  faqSupportAnswer: 'Yes, each project includes a period of technical support. I can also sign a contract for long-term maintenance.',
+  faqTechnologies: 'What technologies do you use?',
+  faqTechnologiesAnswer: 'Main stack: Next.js 14, React 18, TypeScript, Tailwind CSS. I also work with Node.js, PostgreSQL, MongoDB and other technologies as needed.',
+  faqMobile: 'Do you make mobile applications?',
+  faqMobileAnswer: 'Yes, I develop mobile applications using React Native or web version with PWA functionality.',
+  faqProcess: 'How does the development process work?',
+  faqProcessAnswer: '1. Discussion of requirements and planning\n2. Creating design and prototype\n3. Development and testing\n4. Launch and setup\n5. Support and updates',
     
     // Footer
     contactTitle: 'Contact Me',

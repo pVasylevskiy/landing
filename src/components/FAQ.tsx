@@ -1,42 +1,38 @@
 'use client'
 
 import { useState } from 'react'
-
-const faqs = [
-  {
-    question: 'Сколько времени занимает разработка?',
-    answer:
-      'Время разработки зависит от сложности проекта. Простой лендинг - 2-3 недели, корпоративный сайт - 1-2 месяца, веб-приложение - 2-6 месяцев.',
-  },
-  {
-    question: 'Работаете ли вы с существующими проектами?',
-    answer:
-      'Да, я могу доработать, переписать или модернизировать существующие проекты. Сначала проведу аудит и предложу оптимальное решение.',
-  },
-  {
-    question: 'Предоставляете ли вы техническую поддержку?',
-    answer:
-      'Да, каждый проект включает период технической поддержки. Также могу заключить договор на долгосрочное обслуживание.',
-  },
-  {
-    question: 'Какие технологии используете?',
-    answer:
-      'Основной стек: Next.js 14, React 18, TypeScript, Tailwind CSS. Также работаю с Node.js, PostgreSQL, MongoDB и другими технологиями по необходимости.',
-  },
-  {
-    question: 'Делаете ли вы мобильные приложения?',
-    answer:
-      'Да, разрабатываю мобильные приложения с использованием React Native или веб-версии с PWA функциональностью.',
-  },
-  {
-    question: 'Как происходит процесс разработки?',
-    answer:
-      '1. Обсуждение требований и планирование\n2. Создание дизайна и прототипа\n3. Разработка и тестирование\n4. Запуск и настройка\n5. Поддержка и обновления',
-  },
-]
+import { useLanguage } from '@/lib/language-context'
 
 export default function FAQ() {
+  const { t } = useLanguage()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const faqs = [
+    {
+      question: t('faqDevTime'),
+      answer: t('faqDevTimeAnswer'),
+    },
+    {
+      question: t('faqExistingProjects'),
+      answer: t('faqExistingProjectsAnswer'),
+    },
+    {
+      question: t('faqSupport'),
+      answer: t('faqSupportAnswer'),
+    },
+    {
+      question: t('faqTechnologies'),
+      answer: t('faqTechnologiesAnswer'),
+    },
+    {
+      question: t('faqMobile'),
+      answer: t('faqMobileAnswer'),
+    },
+    {
+      question: t('faqProcess'),
+      answer: t('faqProcessAnswer'),
+    },
+  ]
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -50,7 +46,7 @@ export default function FAQ() {
             id="faq-heading"
             className="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white"
           >
-            Часто задаваемые вопросы
+            {t('faqTitle')}
           </h2>
           <dl className="mt-10 space-y-6 divide-y divide-gray-900/10 dark:divide-gray-100/10">
             {faqs.map((faq, index) => (
