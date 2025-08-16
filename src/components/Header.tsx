@@ -132,58 +132,74 @@ export default function Header() {
             />
             {/* Mobile menu */}
             <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
+              initial={{ y: '-100%', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: '-100%', opacity: 0 }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
               id="mobile-menu"
-              className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900 shadow-xl"
+              className="fixed top-0 left-0 right-0 z-50 w-full bg-white dark:bg-gray-900 shadow-xl border-b border-gray-200 dark:border-gray-700"
               role="dialog"
               aria-modal="true"
               aria-label="Мобильное меню"
             >
-              <div className="flex items-center justify-between">
-                <a href="#" className="-m-1.5 p-1.5">
-                  <span className="text-2xl font-bold text-primary-600 dark:text-primary-400">
-                    Pavel.Dev
-                  </span>
-                </a>
-                <button
-                  type="button"
-                  className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-300"
-                  onClick={toggleMobileMenu}
-                  aria-label="Закрыть мобильное меню"
-                >
-                  <span className="sr-only">Закрыть меню</span>
-                  <svg
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
+              <div className="px-6 py-4">
+                <div className="flex items-center justify-between mb-6">
+                  <a href="#" className="-m-1.5 p-1.5">
+                    <span className="text-2xl font-bold text-primary-600 dark:text-primary-400">
+                      Pavel.Dev
+                    </span>
+                  </a>
+                  <button
+                    type="button"
+                    className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    onClick={toggleMobileMenu}
+                    aria-label="Закрыть мобильное меню"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-gray-500/10">
-                  <div className="space-y-2 py-6">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-800"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
+                    <span className="sr-only">Закрыть меню</span>
+                    <svg
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                
+                {/* Navigation Links */}
+                <nav className="space-y-4">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="block rounded-lg px-4 py-3 text-lg font-semibold text-gray-900 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-800 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </nav>
+
+                {/* Additional Info */}
+                <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                    Свяжитесь со мной для обсуждения вашего проекта
+                  </p>
+                  <a
+                    href="mailto:hello@pavel.dev"
+                    className="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-500 transition-colors"
+                  >
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Написать письмо
+                  </a>
                 </div>
               </div>
             </motion.div>
