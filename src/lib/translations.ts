@@ -54,6 +54,9 @@ export const translations = {
   popular: 'Популярный',
   startProjectPricing: 'Начать проект',
   
+  // Price prefixes
+  from: 'от',
+  
   // Pricing Tiers
   tierLanding: 'Лендинг',
   tierCorporate: 'Корпоративный сайт',
@@ -190,6 +193,9 @@ export const translations = {
   pricingDescription: 'Transparent pricing without hidden fees. Each project is individual.',
   popular: 'Popular',
   startProjectPricing: 'Start Project',
+  
+  // Price prefixes
+  from: 'from',
   
   // Pricing Tiers
   tierLanding: 'Landing Page',

@@ -10,7 +10,7 @@ export default function Pricing() {
       name: t('tierLanding'),
       id: 'tier-landing',
       href: '#',
-      price: { monthly: 'from $500' },
+      price: { monthly: `${t('from')} $500` },
       description: t('tierLandingDesc'),
       features: [
         t('adaptiveDesign'),
@@ -26,7 +26,7 @@ export default function Pricing() {
       name: t('tierCorporate'),
       id: 'tier-corporate',
       href: '#',
-      price: { monthly: 'from $1,500' },
+      price: { monthly: `${t('from')} $1,500` },
       description: t('tierCorporateDesc'),
       features: [
         t('upTo10Pages'),
@@ -42,7 +42,7 @@ export default function Pricing() {
       name: t('tierApp'),
       id: 'tier-app',
       href: '#',
-      price: { monthly: 'from $3,000' },
+      price: { monthly: `${t('from')} $3,000` },
       description: t('tierAppDesc'),
       features: [
         t('userAuth'),
